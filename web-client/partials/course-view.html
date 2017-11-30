@@ -1,0 +1,21 @@
+<table class="table coursetable">
+  <tr>
+    <td><h3>Details for {{course.name}}</h3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Course id</td>
+    <td>{{course.id}}</td>
+  </tr>
+  <tr>
+    <td>Course name</td>
+    <td>{{course.name}}</td>
+  </tr>
+  <tr>
+    <td>Course description</td>
+    <td>{{course.description}}</td>
+  </tr>
+</table>
+<div>
+  <a class="btn btn-primary" ui-sref="editCourse({id:course.id})">Edit</a>
+</div>

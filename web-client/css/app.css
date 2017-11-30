@@ -5,11 +5,11 @@ Placeholder for app specific css properties.
     margin-top:10px;
 }
 
-.movietable tr td:nth-child(2){
+.apptable tr td:nth-child(2){
     width: 150px;
 }
 
-.movietable tr:nth-child(1) td{
+.apptable tr:nth-child(1) td{
     border-top: none;
 }
 a.nodecoration{
