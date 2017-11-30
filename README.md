@@ -1,9 +1,9 @@
-### Server StartUp
+### Server Startup
 mvn clean install
 
-mvn spring-bbot:run
+mvn spring-boot:run
 
-### Angular StartUP
+### Angular Startup
 npm install -g http-server
 
 http-server -o
