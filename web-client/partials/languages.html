@@ -1,0 +1,15 @@
+<a ui-sref="newLanguage" class="btn-success btn nodecoration">Add New Language</a>
+
+<table class="table languagetable">
+  <tr>
+    <td><h3>All Languages</h3></td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="language in languages">
+    <td>{{language.name}}</td>
+    <td>
+      <a class="btn btn-primary" ui-sref="viewLanguage({id:language.id})">View</a>
+      <a class="btn btn-danger"  ng-click="deleteLanguage(language)">Delete</a>
+    </td>
+  </tr>
+</table>
