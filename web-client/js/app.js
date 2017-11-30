@@ -1,19 +1,22 @@
-angular.module('App', ['ui.router', 'ngResource', 'App.languages-controllers', 'App.languages-services']);
+angular.module('App', ['ui.router', 'ngResource', 'base64', 'App.languages-controllers', 'App.languages-services']);
 
-angular.module('App').config(function($stateProvider) {
+angular.module('App').config(function($httpProvider, $base64) {
+  var auth = $base64.encode("user1:user1Pass");
+  $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
+}).config(function($stateProvider) {
   $stateProvider.state('languages', { // state for showing all languages
     url: '/languages',
     templateUrl: 'partials/languages.html',
     controller: 'LanguageListController'
-}).state('viewLanguage', { //state for showing single language
+  }).state('viewLanguage', { //state for showing single language
     url: '/languages/:id/view',
     templateUrl: 'partials/language-view.html',
     controller: 'LanguageViewController'
-}).state('newLanguage', { //state for adding a new language
+  }).state('newLanguage', { //state for adding a new language
     url: '/languages/new',
     templateUrl: 'partials/language-add.html',
     controller: 'LanguageCreateController'
-}).state('editLanguage', { //state for updating a language
+  }).state('editLanguage', { //state for updating a language
     url: '/languages/:id/edit',
     templateUrl: 'partials/language-edit.html',
     controller: 'LanguageEditController'
