@@ -29,8 +29,8 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
 
 	@Override
 	protected void configure(final HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest().authenticated().and()
-				.httpBasic().authenticationEntryPoint(authenticationEntryPoint);
+		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest()
+				.authenticated().and().httpBasic().authenticationEntryPoint(authenticationEntryPoint);
 
 		http.addFilterAfter(new CustomFilter(), BasicAuthenticationFilter.class);
 	}
