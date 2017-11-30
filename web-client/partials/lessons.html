@@ -1,0 +1,15 @@
+<a ui-sref="newLesson" class="btn-success btn nodecoration">Add New Lesson</a>
+
+<table class="table apptable">
+  <tr>
+    <td><h3>All Lessons</h3></td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="lesson in lessons">
+    <td>{{lesson.name}}</td>
+    <td>
+      <a class="btn btn-primary" ui-sref="viewLesson({id:lesson.id})">View</a>
+      <a class="btn btn-danger"  ng-click="deleteLesson(lesson)">Delete</a>
+    </td>
+  </tr>
+</table>

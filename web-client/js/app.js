@@ -1,4 +1,4 @@
-angular.module('App', ['ui.router', 'ngResource', 'base64', 'App.languages-controllers', 'App.languages-services', 'App.courses-controllers', 'App.courses-services']);
+angular.module('App', ['ui.router', 'ngResource', 'base64', 'App.languages-controllers', 'App.languages-services', 'App.courses-controllers', 'App.courses-services', 'App.lessons-controllers', 'App.lessons-services']);
 
 angular.module('App')
 
@@ -44,6 +44,26 @@ angular.module('App')
     url: '/courses/:id/edit',
     templateUrl: 'partials/course-edit.html',
     controller: 'CourseEditController'
+  });
+})
+
+.config(function($stateProvider) {
+  $stateProvider.state('lessons', { // state for showing all lessons
+    url: '/lessons',
+    templateUrl: 'partials/lessons.html',
+    controller: 'LessonListController'
+  }).state('viewLesson', { //state for showing single lesson
+    url: '/lessons/:id/view',
+    templateUrl: 'partials/lesson-view.html',
+    controller: 'LessonViewController'
+  }).state('newLesson', { //state for adding a new lesson
+    url: '/lessons/new',
+    templateUrl: 'partials/lesson-add.html',
+    controller: 'LessonCreateController'
+  }).state('editLesson', { //state for updating a lesson
+    url: '/lessons/:id/edit',
+    templateUrl: 'partials/lesson-edit.html',
+    controller: 'LessonEditController'
   });
 })
 
