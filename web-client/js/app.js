@@ -30,18 +30,32 @@ angular.module('App')
 .config(function($stateProvider) {
   $stateProvider.state('courses', { // state for showing all courses
     url: '/courses',
+    params: {
+        languageId: ""
+    },
     templateUrl: 'partials/courses.html',
     controller: 'CourseListController'
   }).state('viewCourse', { //state for showing single course
     url: '/courses/:id/view',
+    params: {
+        id: "",
+        languageId: ""
+    },
     templateUrl: 'partials/course-view.html',
     controller: 'CourseViewController'
   }).state('newCourse', { //state for adding a new course
     url: '/courses/new',
+    params: {
+        languageId: ""
+    },
     templateUrl: 'partials/course-add.html',
     controller: 'CourseCreateController'
   }).state('editCourse', { //state for updating a course
     url: '/courses/:id/edit',
+    params: {
+        id: "",
+        languageId: ""
+    },
     templateUrl: 'partials/course-edit.html',
     controller: 'CourseEditController'
   });
