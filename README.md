@@ -7,3 +7,9 @@ mvn spring-boot:run
 npm install -g http-server
 
 http-server -o
+
+### Linkek
+
+* https://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
+* https://spring.io/guides/gs/rest-service-cors/
+* https://projects.spring.io/spring-security/
