@@ -18,5 +18,6 @@
 </table>
 <div>
   <a class="btn btn-warning" ui-sref="courses({languageId: langId})">Back</a>
-  <a class="btn btn-primary" ui-sref="editCourse({id:course.id, languageId: course.language.id})">Edit</a>
+  <a class="btn btn-primary" ui-sref="editCourse({id: course.id, languageId: course.language.id})">Edit</a>
+  <a class="btn btn-info" ui-sref="lessons({languageId: course.language.id, courseId: course.id})">Show lessons</a>
 </div>

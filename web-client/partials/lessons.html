@@ -1,4 +1,4 @@
-<a ui-sref="newLesson" class="btn-success btn nodecoration">Add New Lesson</a>
+<a ui-sref="newLesson({languageId:langId, courseId: cId})" class="btn-success btn nodecoration">Add New Lesson</a>
 
 <table class="table apptable">
   <tr>
@@ -8,8 +8,10 @@
   <tr ng-repeat="lesson in lessons">
     <td>{{lesson.name}}</td>
     <td>
-      <a class="btn btn-primary" ui-sref="viewLesson({id:lesson.id})">View</a>
+      <a class="btn btn-primary" ui-sref="viewLesson({languageId: lesson.course.language.id, courseId: lesson.course.id, id:lesson.id})">View</a>
       <a class="btn btn-danger"  ng-click="deleteLesson(lesson)">Delete</a>
     </td>
   </tr>
 </table>
+
+<a class="btn btn-warning" ui-sref="viewCourse({languageId:langId, id:cId})">Back</a>

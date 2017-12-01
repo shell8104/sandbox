@@ -64,18 +64,36 @@ angular.module('App')
 .config(function($stateProvider) {
   $stateProvider.state('lessons', { // state for showing all lessons
     url: '/lessons',
+    params: {
+        languageId: "",
+        courseId: ""
+    },
     templateUrl: 'partials/lessons.html',
     controller: 'LessonListController'
   }).state('viewLesson', { //state for showing single lesson
     url: '/lessons/:id/view',
+    params: {
+        id: "",
+        languageId: "",
+        courseId: ""
+    },
     templateUrl: 'partials/lesson-view.html',
     controller: 'LessonViewController'
   }).state('newLesson', { //state for adding a new lesson
     url: '/lessons/new',
+    params: {
+        languageId: "",
+        courseId: ""
+    },
     templateUrl: 'partials/lesson-add.html',
     controller: 'LessonCreateController'
   }).state('editLesson', { //state for updating a lesson
     url: '/lessons/:id/edit',
+    params: {
+        id: "",
+        languageId: "",
+        courseId: ""
+    },
     templateUrl: 'partials/lesson-edit.html',
     controller: 'LessonEditController'
   });

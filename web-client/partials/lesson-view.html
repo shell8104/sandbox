@@ -17,5 +17,6 @@
   </tr>
 </table>
 <div>
-  <a class="btn btn-primary" ui-sref="editLesson({id:lesson.id})">Edit</a>
+  <a class="btn btn-warning" ui-sref="lessons({languageId: langId, courseId: cId})">Back</a>
+  <a class="btn btn-primary" ui-sref="editLesson({id: lesson.id, languageId: lesson.course.language.id, courseId: lesson.course.id})">Edit</a>
 </div>
