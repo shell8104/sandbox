@@ -1,5 +1,4 @@
 angular.module('App.lessons-controllers', []).controller('LessonListController', function($scope, $state, $stateParams, popupService, $window, Lesson) {
-    console.log($stateParams);
   $scope.langId = $stateParams.languageId;
   $scope.cId = $stateParams.courseId;
   $scope.lessons = Lesson.query({
@@ -19,7 +18,6 @@ angular.module('App.lessons-controllers', []).controller('LessonListController',
     }
   };
 }).controller('LessonViewController', function($scope, $stateParams, Lesson) {
-    console.log($stateParams);
   $scope.langId = $stateParams.languageId;
   $scope.cId = $stateParams.courseId;
   $scope.lesson = Lesson.get({
@@ -28,7 +26,6 @@ angular.module('App.lessons-controllers', []).controller('LessonListController',
     id: $stateParams.id
   }); //Get a single lesson. Issues a GET to /lessons/:id
 }).controller('LessonCreateController', function($scope, $state, $stateParams, Lesson) {
-    console.log($stateParams);
   $scope.langId = $stateParams.languageId;
   $scope.cId = $stateParams.courseId;
   $scope.lesson = new Lesson(); //create new lesson instance. Properties will be set via ng-model on UI
@@ -43,7 +40,6 @@ angular.module('App.lessons-controllers', []).controller('LessonListController',
     });
   };
 }).controller('LessonEditController', function($scope, $state, $stateParams, Lesson) {
-    console.log($stateParams);
   $scope.langId = $stateParams.languageId;
   $scope.cId = $stateParams.courseId;
   $scope.updateLesson = function() { //Update the edited lesson. Issues a PUT to /lessons/:id
